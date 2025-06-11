@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>India Corp - Leading Business Solutions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #ffffff;
+        }
+        
+        header {
+            background-color: #000000; /* Black */
+            color: white;
+            padding: 1.5rem 0;
+            text-align: center;
+            border-bottom: 3px solid #ff0000;
+        }
+        
+        nav {
+            background-color: #000000; /* Black */
+            padding: 0.7rem 0;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin: 0 1.5rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.3rem 0.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            color: #ff0000;
+            border-bottom: 2px solid #ff0000;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        
+        .hero {
+            background-color: #ff0000; /* Red */
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            border-radius: 5px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 2rem 0;
+        }
+        
+        .service-card {
+            background: white;
+            border: 1px solid #ddd;
+            border-top: 3px solid #ff0000;
+            border-radius: 5px;
+            padding: 1.8rem;
+            margin-bottom: 1.5rem;
+            flex-basis: 30%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        h2 {
+            color: #000000;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 3px;
+            background-color: #ff0000;
+        }
+        
+        footer {
+            background-color: #000000; /* Black */
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+            border-top: 3px solid #ff0000;
+        }
+        
+        .btn {
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 0.7rem 1.5rem;
+            background-color: #000000;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: #ff0000;
+            transform: scale(1.05);
+        }
+        
+        @media (max-width: 768px) {
+            .services {
+                flex-direction: column;
+            }
+            
+            .service-card {
+                flex-basis: 100%;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>INDIA CORP</h1>
+        <p>Excellence in Business Solutions</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <section class="hero">
+            <h2 style="color: white; border-bottom: 2px solid white;">Welcome to India Corp</h2>
+            <p style="font-size: 1.2rem;">Driving innovation and growth with cutting-edge solutions</p>
+            <a href="#" class="btn">Explore Our Services</a>
+        </section>
+        
+        <section>
+            <h2>Our Services</h2>
+            <div class="services">
+                <div class="service-card">
+                    <h3>Business Consulting</h3>
+                    <p>Strategic advisory services to help your business navigate complex markets and maximize growth potential.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Technology Solutions</h3>
+                    <p>Innovative tech services designed to transform your operations and digital capabilities.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Global Expansion</h3>
+                    <p>Comprehensive support for Indian businesses looking to expand internationally.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>About India Corp</h2>
+            <p>India Corp is a premier business solutions provider with a strong presence across India's major economic hubs. Since our inception in 2005, we have been committed to delivering excellence through our tailored services.</p>
+            <p>Our approach combines deep market understanding with innovative thinking to create sustainable value for our clients.</p>
+            <a href="#" class="btn" style="background-color: #ff0000;">Learn More About Us</a>
+        </section>
+    </div>
+    
+    <footer>
+        <p>&copy; 2023 India Corp. All Rights Reserved.</p>
+        <p>Contact: <a href="mailto:info@indiacorp.com" style="color: #ff0000;">info@indiacorp.com</a> | Phone: +91 11 23456789</p>
+        <p>Corporate Office: New Delhi, India</p>
+    </footer>
+</body>
+</html>
