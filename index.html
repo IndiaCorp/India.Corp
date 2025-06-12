@@ -89,77 +89,58 @@
             margin: 0 auto;
         }
         
-        .products {
+        .about-section {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
             margin: 40px 0;
         }
         
-        .product-card {
+        .about-card {
             background-color: var(--white);
             border-radius: 15px;
             width: 48%;
             margin-bottom: 30px;
-            overflow: hidden;
+            padding: 30px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
         }
         
-        .product-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .product-image {
-            height: 200px;
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .flag {
-            background-color: var(--primary);
-            position: relative;
-        }
-        
-        .flag::before, .flag::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            right: 0;
-            height: 33.33%;
-        }
-        
-        .flag::before {
-            top: 0;
-            background-color: var(--primary);
-        }
-        
-        .flag::after {
-            bottom: 0;
-            background-color: var(--green);
-        }
-        
-        .flag::before::after {
-            content: '☸';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: var(--blue);
-            font-size: 40px;
-        }
-        
-        .coffee {
-            background-color: #6F4E37;
-        }
-        
-        .product-info {
-            padding: 20px;
-        }
-        
-        .product-info h3 {
-            margin-top: 0;
+        .about-card h2 {
             color: var(--primary);
+            margin-top: 0;
+        }
+        
+        .countdown {
+            background-color: var(--white);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            margin: 40px 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .countdown h2 {
+            color: var(--primary);
+            margin-top: 0;
+        }
+        
+        .countdown-timer {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary);
+            margin: 20px 0;
+        }
+        
+        .flag-icon {
+            font-size: 40px;
+            color: var(--blue);
+            margin: 20px 0;
+        }
+        
+        .coffee-icon {
+            font-size: 40px;
+            color: #6F4E37;
+            margin: 20px 0;
         }
         
         footer {
@@ -173,7 +154,7 @@
         }
         
         @media (max-width: 768px) {
-            .product-card {
+            .about-card {
                 width: 100%;
             }
         }
@@ -186,35 +167,38 @@
             <div class="tagline">Celebrating Indian Heritage with Every Flag and Sip</div>
             <nav>
                 <a href="#">Home</a>
-                <a href="#">Flags</a>
-                <a href="#">Coffee</a>
-                <a href="#">About</a>
+                <a href="#">Our Story</a>
+                <a href="#">Coming Soon</a>
+                <a href="#">Mission</a>
             </nav>
         </div>
     </header>
     
     <div class="container">
         <section class="hero">
-            <h1>Proudly Indian</h1>
-            <p>Discover our premium collection of Indian national flags and authentic Indian coffee blends. Celebrate your patriotism with every purchase.</p>
+            <h1>A New Chapter Begins</h1>
+            <p>Founded on June 12, 2025, we're preparing to bring you quality Indian flags and premium coffee blends starting July 15, 2025.</p>
         </section>
         
-        <section class="products">
-            <div class="product-card">
-                <div class="product-image flag"></div>
-                <div class="product-info">
-                    <h3>Indian National Flags</h3>
-                    <p>High-quality, durable Indian flags in various sizes. Made with pride in India.</p>
-                </div>
+        <section class="about-section">
+            <div class="about-card">
+                <div class="flag-icon">☸</div>
+                <h2>Our Origin</h2>
+                <p>Bharat Vastra & Brews was born on June 12, 2025, from a passion for Indian heritage and quality craftsmanship. We're combining national pride with artisanal flavors to create unique products that celebrate India's spirit.</p>
             </div>
             
-            <div class="product-card">
-                <div class="product-image coffee"></div>
-                <div class="product-info">
-                    <h3>Indian Coffee Blends</h3>
-                    <p>Rich, aromatic coffee sourced from India's finest coffee plantations.</p>
-                </div>
+            <div class="about-card">
+                <div class="coffee-icon">☕</div>
+                <h2>Coming Soon</h2>
+                <p>Our carefully curated collection of premium Indian flags and specialty coffee blends will be available starting July 15, 2025. We're currently preparing our inaugural product line with utmost care and attention to quality.</p>
             </div>
+        </section>
+        
+        <section class="countdown">
+            <h2>Launch Countdown</h2>
+            <p>We begin our journey on:</p>
+            <div class="countdown-timer">July 15, 2025</div>
+            <p>Join us as we embark on this exciting venture to bring together national pride and artisanal quality.</p>
         </section>
     </div>
     
