@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>India Corp - Premium Coffee & Flags</title>
+    <title>India Corp - Indian Coffee & Flags</title>
     <style>
         * {
             margin: 0;
@@ -15,15 +15,15 @@
         body {
             background-color: #f9f9f9;
             color: #333;
+            line-height: 1.6;
         }
         
         /* Header */
         header {
             background: linear-gradient(to right, #FF9933, #FFFFFF, #138808);
             color: #000;
-            padding: 1.5rem 0;
+            padding: 2rem 0;
             text-align: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         
         .logo {
@@ -34,12 +34,13 @@
         
         .tagline {
             font-style: italic;
+            font-size: 1.2rem;
         }
         
         /* Navigation */
         nav {
             background-color: #000080;
-            padding: 0.8rem 0;
+            padding: 1rem 0;
             position: sticky;
             top: 0;
             z-index: 100;
@@ -60,12 +61,11 @@
             text-decoration: none;
             font-weight: bold;
             padding: 0.5rem 1rem;
-            border-radius: 4px;
             transition: all 0.3s;
         }
         
         nav ul li a:hover {
-            background-color: rgba(255,255,255,0.2);
+            color: #FF9933;
         }
         
         /* Main Container */
@@ -75,131 +75,55 @@
             padding: 0 2rem;
         }
         
-        /* Hero Section */
-        .hero {
-            background-color: #000080;
-            color: white;
-            padding: 3rem;
-            text-align: center;
-            border-radius: 8px;
-            margin-bottom: 2rem;
-            background-image: url('https://via.placeholder.com/1200x400/000080/FFFFFF?text=Premium+Coffee+%26+Indian+Flags');
-            background-size: cover;
-            background-position: center;
-        }
-        
-        /* Category Tabs */
-        .category-tabs {
-            display: flex;
-            justify-content: center;
-            margin: 2rem 0;
-        }
-        
-        .tab-btn {
-            padding: 0.8rem 1.5rem;
-            background-color: #ddd;
-            border: none;
-            cursor: pointer;
-            font-weight: bold;
-            transition: all 0.3s;
-        }
-        
-        .tab-btn.active {
-            background-color: #FF9933;
-            color: #000;
-        }
-        
-        .tab-btn:first-child {
-            border-radius: 5px 0 0 5px;
-        }
-        
-        .tab-btn:last-child {
-            border-radius: 0 5px 5px 0;
-        }
-        
-        /* Products Section */
-        .product-section {
-            display: none;
-        }
-        
-        .product-section.active {
-            display: block;
-        }
-        
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-        
-        .product-card {
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-        
-        .product-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .product-img {
-            height: 200px;
-            background-color: #f0f0f0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-        
-        .product-img img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-        }
-        
-        .product-info {
-            padding: 1.2rem;
-        }
-        
-        .product-title {
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .product-price {
-            color: #138808;
-            font-weight: bold;
-            font-size: 1.2rem;
-            margin-bottom: 0.8rem;
-        }
-        
-        .btn {
-            display: inline-block;
-            background-color: #FF9933;
-            color: #000;
-            padding: 0.6rem 1.2rem;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: bold;
-            text-decoration: none;
-            transition: all 0.3s;
-        }
-        
-        .btn:hover {
-            background-color: #e68a00;
-        }
-        
-        /* About Section */
-        .about-section {
+        /* Sections */
+        section {
+            margin-bottom: 3rem;
             background-color: white;
             padding: 2rem;
             border-radius: 8px;
-            margin: 3rem 0;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            color: #000080;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #FF9933;
+        }
+        
+        h3 {
+            color: #138808;
+            margin: 1.5rem 0 1rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        .product-category {
+            margin-bottom: 2rem;
+        }
+        
+        .product-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .product-item {
+            padding: 1.5rem;
+            background-color: #f5f5f5;
+            border-radius: 6px;
+            border-left: 4px solid #FF9933;
+        }
+        
+        .highlight {
+            background-color: #f0f8ff;
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin: 1.5rem 0;
+            border-left: 4px solid #000080;
         }
         
         /* Footer */
@@ -233,7 +157,7 @@
                 margin: 0.5rem 0;
             }
             
-            .product-grid {
+            .product-list {
                 grid-template-columns: 1fr;
             }
         }
@@ -242,188 +166,95 @@
 <body>
     <header>
         <div class="logo">INDIA CORP</div>
-        <p class="tagline">Premium Indian Coffee & Flags - Taste and Celebrate India</p>
+        <p class="tagline">Celebrating Indian Coffee and National Pride</p>
     </header>
     
     <nav>
         <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#products">Products</a></li>
             <li><a href="#about">About Us</a></li>
+            <li><a href="#coffee">Our Coffee</a></li>
+            <li><a href="#flags">Our Flags</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
     
     <div class="container">
-        <section id="home" class="hero">
-            <h1>Experience the Taste & Pride of India</h1>
-            <p>Authentic Indian coffee and high-quality national flags</p>
-            <a href="#products" class="btn">Shop Now</a>
-        </section>
-        
-        <section id="products">
-            <div class="category-tabs">
-                <button class="tab-btn active" onclick="showCategory('flags')">Indian Flags</button>
-                <button class="tab-btn" onclick="showCategory('coffee')">Indian Coffee</button>
-            </div>
-            
-            <div id="flags" class="product-section active">
-                <h2>Indian Flag Collection</h2>
-                <div class="product-grid">
-                    <div class="product-card">
-                        <div class="product-img">
-                            <img src="https://via.placeholder.com/250x200/000080/FFFFFF?text=National+Flag" alt="Indian National Flag">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title">Indian National Flag (3x2 ft)</h3>
-                            <p>Premium cotton flag with vibrant colors</p>
-                            <p class="product-price">₹499</p>
-                            <button class="btn">Add to Cart</button>
-                        </div>
-                    </div>
-                    
-                    <div class="product-card">
-                        <div class="product-img">
-                            <img src="https://via.placeholder.com/250x200/000080/FFFFFF?text=Car+Flag" alt="Car Flag">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title">Car Flag Set (2 flags)</h3>
-                            <p>Perfect for your vehicle on national holidays</p>
-                            <p class="product-price">₹299</p>
-                            <button class="btn">Add to Cart</button>
-                        </div>
-                    </div>
-                    
-                    <div class="product-card">
-                        <div class="product-img">
-                            <img src="https://via.placeholder.com/250x200/000080/FFFFFF?text=Khadi+Flag" alt="Khadi Flag">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title">Khadi Flag (5x3 ft)</h3>
-                            <p>Authentic hand-spun khadi material</p>
-                            <p class="product-price">₹1,299</p>
-                            <button class="btn">Add to Cart</button>
-                        </div>
-                    </div>
-                    
-                    <div class="product-card">
-                        <div class="product-img">
-                            <img src="https://via.placeholder.com/250x200/000080/FFFFFF?text=Desk+Flag" alt="Desk Flag">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title">Desk Flag with Stand</h3>
-                            <p>Elegant display for your office</p>
-                            <p class="product-price">₹199</p>
-                            <button class="btn">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div id="coffee" class="product-section">
-                <h2>Indian Coffee Selection</h2>
-                <div class="product-grid">
-                    <div class="product-card">
-                        <div class="product-img">
-                            <img src="https://via.placeholder.com/250x200/FF9933/000000?text=Arabica" alt="Arabica Coffee">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title">Karnataka Arabica</h3>
-                            <p>100g premium Arabica beans</p>
-                            <p class="product-price">₹350</p>
-                            <button class="btn">Add to Cart</button>
-                        </div>
-                    </div>
-                    
-                    <div class="product-card">
-                        <div class="product-img">
-                            <img src="https://via.placeholder.com/250x200/FF9933/000000?text=Robusta" alt="Robusta Coffee">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title">Kerala Robusta</h3>
-                            <p>Strong and aromatic Robusta blend</p>
-                            <p class="product-price">₹280</p>
-                            <button class="btn">Add to Cart</button>
-                        </div>
-                    </div>
-                    
-                    <div class="product-card">
-                        <div class="product-img">
-                            <img src="https://via.placeholder.com/250x200/FF9933/000000?text=Chikmagalur" alt="Chikmagalur Coffee">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title">Chikmagalur Special</h3>
-                            <p>250g of India's finest coffee</p>
-                            <p class="product-price">₹550</p>
-                            <button class="btn">Add to Cart</button>
-                        </div>
-                    </div>
-                    
-                    <div class="product-card">
-                        <div class="product-img">
-                            <img src="https://via.placeholder.com/250x200/FF9933/000000?text=Instant" alt="Instant Coffee">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title">Instant Coffee Mix</h3>
-                            <p>200g premium instant coffee</p>
-                            <p class="product-price">₹320</p>
-                            <button class="btn">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section id="about" class="about-section">
+        <section id="about">
             <h2>About India Corp</h2>
-            <p>Founded in 2010, India Corp is dedicated to promoting two of India's finest products - our world-class coffee and our national pride.</p>
-            <p>We source our coffee directly from plantations in Karnataka and Kerala, ensuring fair prices for farmers and premium quality for our customers. Our flags are manufactured with the highest quality materials, made entirely in India.</p>
-            <p>By choosing India Corp, you support Indian farmers, artisans, and the Make in India initiative.</p>
+            <p>India Corp is a proud Indian enterprise dedicated to promoting two of our nation's finest offerings - premium Indian coffee and high-quality national flags.</p>
+            
+            <div class="highlight">
+                <p>Founded in 2010, we combine traditional values with modern quality standards to bring you authentic products that celebrate India's rich heritage and agricultural excellence.</p>
+            </div>
+            
+            <p>Our mission is to support Indian farmers and manufacturers while providing customers with the very best of Indian products.</p>
+        </section>
+        
+        <section id="coffee" class="product-category">
+            <h2>Our Indian Coffee Selection</h2>
+            <p>We source our coffee directly from plantations across Southern India, ensuring the highest quality while supporting local farming communities.</p>
+            
+            <div class="product-list">
+                <div class="product-item">
+                    <h3>Karnataka Arabica</h3>
+                    <p>Grown in the lush Western Ghats, our Arabica beans are known for their mild flavor and delightful aroma. These medium-roast beans produce a well-balanced cup with subtle fruity notes.</p>
+                </div>
+                
+                <div class="product-item">
+                    <h3>Kerala Robusta</h3>
+                    <p>Our robust Robusta blend comes from the fertile hills of Kerala. With higher caffeine content and a stronger, earthier flavor, it's perfect for those who prefer a bold coffee experience.</p>
+                </div>
+                
+                <div class="product-item">
+                    <h3>Chikmagalur Special</h3>
+                    <p>Often called the 'Coffee Land of Karnataka', Chikmagalur produces some of India's finest coffee. Our special blend combines the best beans from this region for an exceptional taste.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="flags" class="product-category">
+            <h2>Our Indian Flag Collection</h2>
+            <p>We manufacture and distribute high-quality Indian national flags made with pride in India, using materials that withstand weather conditions while maintaining vibrant colors.</p>
+            
+            <div class="product-list">
+                <div class="product-item">
+                    <h3>Standard National Flags</h3>
+                    <p>Available in various sizes from small desk flags to large outdoor flags. Made from durable polyester that resists fading and tearing, perfect for everyday display.</p>
+                </div>
+                
+                <div class="product-item">
+                    <h3>Premium Khadi Flags</h3>
+                    <p>Authentic hand-spun khadi cotton flags as per Bureau of Indian Standards. These flags are specially treated to maintain color fastness and durability.</p>
+                </div>
+                
+                <div class="product-item">
+                    <h3>Specialty Flags</h3>
+                    <p>Includes car flag sets, ceremonial flags, and institutional flags for schools and government buildings. All made with the same attention to quality and respect for our national symbol.</p>
+                </div>
+            </div>
         </section>
         
         <section id="contact">
             <h2>Contact Us</h2>
-            <p>Email: contact@indiacorp.com</p>
-            <p>Phone: +91 9876543210</p>
-            <p>Address: India Corp House, Bengaluru - 560001</p>
+            <p>We'd love to hear from you! Reach out for more information about our products.</p>
+            
+            <div class="highlight">
+                <p><strong>Email:</strong> info@indiacorp.com</p>
+                <p><strong>Phone:</strong> +91 80 1234 5678</p>
+                <p><strong>Address:</strong> India Corp House, MG Road, Bengaluru - 560001</p>
+                <p><strong>Business Hours:</strong> Monday-Saturday, 9:00 AM to 6:00 PM</p>
+            </div>
         </section>
     </div>
     
     <footer>
         <p>&copy; 2023 India Corp. All Rights Reserved.</p>
         <div class="footer-links">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Shipping Policy</a>
-            <a href="#">Returns</a>
+            <a href="#">Our Story</a>
+            <a href="#">Quality Standards</a>
+            <a href="#">Sourcing Practices</a>
         </div>
-        <p>Proudly Indian</p>
+        <p>Proudly Made in India</p>
     </footer>
-
-    <script>
-        // Category tab functionality
-        function showCategory(category) {
-            // Hide all product sections
-            document.querySelectorAll('.product-section').forEach(section => {
-                section.classList.remove('active');
-            });
-            
-            // Show selected section
-            document.getElementById(category).classList.add('active');
-            
-            // Update active tab button
-            document.querySelectorAll('.tab-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            event.target.classList.add('active');
-        }
-        
-        // Simple add to cart functionality
-        document.querySelectorAll('.btn').forEach(button => {
-            button.addEventListener('click', function() {
-                const product = this.parentElement.querySelector('.product-title').textContent;
-                alert(`${product} has been added to your cart!`);
-            });
-        });
-    </script>
 </body>
 </html>
