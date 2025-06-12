@@ -3,255 +3,225 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>India Corp - Indian Coffee & Flags</title>
+    <title>Bharat Vastra & Brews</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
+        :root {
+            --primary: #ff8c00;
+            --primary-light: #ffaa40;
+            --white: #ffffff;
+            --off-white: #f5f5f5;
+            --green: #138808;
+            --blue: #000080;
         }
         
         body {
-            background-color: #f9f9f9;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--off-white);
             color: #333;
-            line-height: 1.6;
         }
         
-        /* Header */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
         header {
-            background: linear-gradient(to right, #FF9933, #FFFFFF, #138808);
-            color: #000;
-            padding: 2rem 0;
-            text-align: center;
+            background-color: var(--primary);
+            padding: 20px 0;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
         
         .logo {
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--white);
+            text-align: center;
         }
         
         .tagline {
-            font-style: italic;
-            font-size: 1.2rem;
-        }
-        
-        /* Navigation */
-        nav {
-            background-color: #000080;
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        nav ul {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-        }
-        
-        nav ul li {
-            margin: 0 1.5rem;
-        }
-        
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            padding: 0.5rem 1rem;
-            transition: all 0.3s;
-        }
-        
-        nav ul li a:hover {
-            color: #FF9933;
-        }
-        
-        /* Main Container */
-        .container {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 2rem;
-        }
-        
-        /* Sections */
-        section {
-            margin-bottom: 3rem;
-            background-color: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        
-        h2 {
-            color: #000080;
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid #FF9933;
-        }
-        
-        h3 {
-            color: #138808;
-            margin: 1.5rem 0 1rem;
-        }
-        
-        p {
-            margin-bottom: 1rem;
-        }
-        
-        .product-category {
-            margin-bottom: 2rem;
-        }
-        
-        .product-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
-        
-        .product-item {
-            padding: 1.5rem;
-            background-color: #f5f5f5;
-            border-radius: 6px;
-            border-left: 4px solid #FF9933;
-        }
-        
-        .highlight {
-            background-color: #f0f8ff;
-            padding: 1.5rem;
-            border-radius: 6px;
-            margin: 1.5rem 0;
-            border-left: 4px solid #000080;
-        }
-        
-        /* Footer */
-        footer {
-            background: linear-gradient(to right, #FF9933, #FFFFFF, #138808);
-            color: #000;
             text-align: center;
-            padding: 2rem 0;
-            margin-top: 3rem;
+            color: var(--white);
+            margin-top: 10px;
+            font-weight: 300;
         }
         
-        .footer-links {
+        nav {
             display: flex;
             justify-content: center;
-            gap: 2rem;
-            margin: 1rem 0;
+            margin-top: 20px;
         }
         
-        .footer-links a {
-            color: #000;
+        nav a {
+            color: var(--white);
             text-decoration: none;
+            margin: 0 15px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        nav a:hover {
+            background-color: var(--primary-light);
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            padding: 60px 0;
+            margin: 40px 0;
+            border-radius: 20px;
+            text-align: center;
+            color: var(--white);
+        }
+        
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 40px 0;
+        }
+        
+        .product-card {
+            background-color: var(--white);
+            border-radius: 15px;
+            width: 48%;
+            margin-bottom: 30px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .product-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .flag {
+            background-color: var(--primary);
+            position: relative;
+        }
+        
+        .flag::before, .flag::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 33.33%;
+        }
+        
+        .flag::before {
+            top: 0;
+            background-color: var(--primary);
+        }
+        
+        .flag::after {
+            bottom: 0;
+            background-color: var(--green);
+        }
+        
+        .flag::before::after {
+            content: '☸';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: var(--blue);
+            font-size: 40px;
+        }
+        
+        .coffee {
+            background-color: #6F4E37;
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-info h3 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+        
+        footer {
+            background-color: var(--primary);
+            color: var(--white);
+            text-align: center;
+            padding: 20px 0;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            margin-top: 40px;
         }
         
         @media (max-width: 768px) {
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            nav ul li {
-                margin: 0.5rem 0;
-            }
-            
-            .product-list {
-                grid-template-columns: 1fr;
+            .product-card {
+                width: 100%;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="logo">INDIA CORP</div>
-        <p class="tagline">Celebrating Indian Coffee and National Pride</p>
+        <div class="container">
+            <div class="logo">Bharat Vastra & Brews</div>
+            <div class="tagline">Celebrating Indian Heritage with Every Flag and Sip</div>
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">Flags</a>
+                <a href="#">Coffee</a>
+                <a href="#">About</a>
+            </nav>
+        </div>
     </header>
     
-    <nav>
-        <ul>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#coffee">Our Coffee</a></li>
-            <li><a href="#flags">Our Flags</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-    
     <div class="container">
-        <section id="about">
-            <h2>About India Corp</h2>
-            <p>India Corp is a proud Indian enterprise dedicated to promoting two of our nation's finest offerings - premium Indian coffee and high-quality national flags.</p>
-            
-            <div class="highlight">
-                <p>Founded in 2010, we combine traditional values with modern quality standards to bring you authentic products that celebrate India's rich heritage and agricultural excellence.</p>
-            </div>
-            
-            <p>Our mission is to support Indian farmers and manufacturers while providing customers with the very best of Indian products.</p>
+        <section class="hero">
+            <h1>Proudly Indian</h1>
+            <p>Discover our premium collection of Indian national flags and authentic Indian coffee blends. Celebrate your patriotism with every purchase.</p>
         </section>
         
-        <section id="coffee" class="product-category">
-            <h2>Our Indian Coffee Selection</h2>
-            <p>We source our coffee directly from plantations across Southern India, ensuring the highest quality while supporting local farming communities.</p>
-            
-            <div class="product-list">
-                <div class="product-item">
-                    <h3>Karnataka Arabica</h3>
-                    <p>Grown in the lush Western Ghats, our Arabica beans are known for their mild flavor and delightful aroma. These medium-roast beans produce a well-balanced cup with subtle fruity notes.</p>
-                </div>
-                
-                <div class="product-item">
-                    <h3>Kerala Robusta</h3>
-                    <p>Our robust Robusta blend comes from the fertile hills of Kerala. With higher caffeine content and a stronger, earthier flavor, it's perfect for those who prefer a bold coffee experience.</p>
-                </div>
-                
-                <div class="product-item">
-                    <h3>Chikmagalur Special</h3>
-                    <p>Often called the 'Coffee Land of Karnataka', Chikmagalur produces some of India's finest coffee. Our special blend combines the best beans from this region for an exceptional taste.</p>
+        <section class="products">
+            <div class="product-card">
+                <div class="product-image flag"></div>
+                <div class="product-info">
+                    <h3>Indian National Flags</h3>
+                    <p>High-quality, durable Indian flags in various sizes. Made with pride in India.</p>
                 </div>
             </div>
-        </section>
-        
-        <section id="flags" class="product-category">
-            <h2>Our Indian Flag Collection</h2>
-            <p>We manufacture and distribute high-quality Indian national flags made with pride in India, using materials that withstand weather conditions while maintaining vibrant colors.</p>
             
-            <div class="product-list">
-                <div class="product-item">
-                    <h3>Standard National Flags</h3>
-                    <p>Available in various sizes from small desk flags to large outdoor flags. Made from durable polyester that resists fading and tearing, perfect for everyday display.</p>
+            <div class="product-card">
+                <div class="product-image coffee"></div>
+                <div class="product-info">
+                    <h3>Indian Coffee Blends</h3>
+                    <p>Rich, aromatic coffee sourced from India's finest coffee plantations.</p>
                 </div>
-                
-                <div class="product-item">
-                    <h3>Premium Khadi Flags</h3>
-                    <p>Authentic hand-spun khadi cotton flags as per Bureau of Indian Standards. These flags are specially treated to maintain color fastness and durability.</p>
-                </div>
-                
-                <div class="product-item">
-                    <h3>Specialty Flags</h3>
-                    <p>Includes car flag sets, ceremonial flags, and institutional flags for schools and government buildings. All made with the same attention to quality and respect for our national symbol.</p>
-                </div>
-            </div>
-        </section>
-        
-        <section id="contact">
-            <h2>Contact Us</h2>
-            <p>We'd love to hear from you! Reach out for more information about our products.</p>
-            
-            <div class="highlight">
-               
             </div>
         </section>
     </div>
     
     <footer>
-        <p>&copy; 2023 India Corp. All Rights Reserved.</p>
-        <div class="footer-links">
-            <a href="#">Our Story</a>
-            <a href="#">Quality Standards</a>
-            <a href="#">Sourcing Practices</a>
+        <div class="container">
+            <p>&copy; 2023 Bharat Vastra & Brews. All Rights Reserved.</p>
         </div>
-        <p>Proudly Made in India</p>
     </footer>
 </body>
 </html>
