@@ -3,32 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>India Corp - Leading Business Solutions</title>
+    <title>India Corp - Premium Coffee & Flags</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
         }
         
         body {
-            line-height: 1.6;
+            background-color: #f9f9f9;
             color: #333;
-            background-color: #ffffff;
         }
         
+        /* Header */
         header {
-            background-color: #000000; /* Black */
-            color: white;
+            background: linear-gradient(to right, #FF9933, #FFFFFF, #138808);
+            color: #000;
             padding: 1.5rem 0;
             text-align: center;
-            border-bottom: 3px solid #ff0000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .tagline {
+            font-style: italic;
+        }
+        
+        /* Navigation */
         nav {
-            background-color: #000000; /* Black */
-            padding: 0.7rem 0;
+            background-color: #000080;
+            padding: 0.8rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
         
         nav ul {
@@ -45,108 +59,171 @@
             color: white;
             text-decoration: none;
             font-weight: bold;
-            padding: 0.3rem 0.5rem;
-            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: all 0.3s;
         }
         
         nav ul li a:hover {
-            color: #ff0000;
-            border-bottom: 2px solid #ff0000;
+            background-color: rgba(255,255,255,0.2);
         }
         
+        /* Main Container */
         .container {
             max-width: 1200px;
             margin: 2rem auto;
             padding: 0 2rem;
         }
         
+        /* Hero Section */
         .hero {
-            background-color: #ff0000; /* Red */
+            background-color: #000080;
             color: white;
-            padding: 4rem 2rem;
+            padding: 3rem;
             text-align: center;
-            border-radius: 5px;
+            border-radius: 8px;
             margin-bottom: 2rem;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            background-image: url('https://via.placeholder.com/1200x400/000080/FFFFFF?text=Premium+Coffee+%26+Indian+Flags');
+            background-size: cover;
+            background-position: center;
         }
         
-        .services {
+        /* Category Tabs */
+        .category-tabs {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
+            justify-content: center;
             margin: 2rem 0;
         }
         
-        .service-card {
-            background: white;
-            border: 1px solid #ddd;
-            border-top: 3px solid #ff0000;
-            border-radius: 5px;
-            padding: 1.8rem;
-            margin-bottom: 1.5rem;
-            flex-basis: 30%;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
+        .tab-btn {
+            padding: 0.8rem 1.5rem;
+            background-color: #ddd;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
         }
         
-        .service-card:hover {
+        .tab-btn.active {
+            background-color: #FF9933;
+            color: #000;
+        }
+        
+        .tab-btn:first-child {
+            border-radius: 5px 0 0 5px;
+        }
+        
+        .tab-btn:last-child {
+            border-radius: 0 5px 5px 0;
+        }
+        
+        /* Products Section */
+        .product-section {
+            display: none;
+        }
+        
+        .product-section.active {
+            display: block;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .product-card:hover {
             transform: translateY(-5px);
         }
         
-        h2 {
-            color: #000000;
-            margin-bottom: 1.5rem;
+        .product-img {
+            height: 200px;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             position: relative;
-            padding-bottom: 0.5rem;
         }
         
-        h2::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 60px;
-            height: 3px;
-            background-color: #ff0000;
+        .product-img img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
         }
         
-        footer {
-            background-color: #000000; /* Black */
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-            margin-top: 3rem;
-            border-top: 3px solid #ff0000;
+        .product-info {
+            padding: 1.2rem;
+        }
+        
+        .product-title {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .product-price {
+            color: #138808;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
         }
         
         .btn {
             display: inline-block;
-            margin-top: 1.5rem;
-            padding: 0.7rem 1.5rem;
-            background-color: #000000;
-            color: white;
+            background-color: #FF9933;
+            color: #000;
+            padding: 0.6rem 1.2rem;
             border: none;
-            border-radius: 3px;
+            border-radius: 4px;
             cursor: pointer;
             font-weight: bold;
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: all 0.3s;
         }
         
         .btn:hover {
-            background-color: #ff0000;
-            transform: scale(1.05);
+            background-color: #e68a00;
+        }
+        
+        /* About Section */
+        .about-section {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 3rem 0;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(to right, #FF9933, #FFFFFF, #138808);
+            color: #000;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1rem 0;
+        }
+        
+        .footer-links a {
+            color: #000;
+            text-decoration: none;
         }
         
         @media (max-width: 768px) {
-            .services {
-                flex-direction: column;
-            }
-            
-            .service-card {
-                flex-basis: 100%;
-            }
-            
             nav ul {
                 flex-direction: column;
                 align-items: center;
@@ -155,62 +232,198 @@
             nav ul li {
                 margin: 0.5rem 0;
             }
+            
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>INDIA CORP</h1>
-        <p>Excellence in Business Solutions</p>
+        <div class="logo">INDIA CORP</div>
+        <p class="tagline">Premium Indian Coffee & Flags - Taste and Celebrate India</p>
     </header>
     
     <nav>
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Projects</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
     
     <div class="container">
-        <section class="hero">
-            <h2 style="color: white; border-bottom: 2px solid white;">Welcome to India Corp</h2>
-            <p style="font-size: 1.2rem;">Driving innovation and growth with cutting-edge solutions</p>
-            <a href="#" class="btn">Explore Our Services</a>
+        <section id="home" class="hero">
+            <h1>Experience the Taste & Pride of India</h1>
+            <p>Authentic Indian coffee and high-quality national flags</p>
+            <a href="#products" class="btn">Shop Now</a>
         </section>
         
-        <section>
-            <h2>Our Services</h2>
-            <div class="services">
-                <div class="service-card">
-                    <h3>Business Consulting</h3>
-                    <p>Strategic advisory services to help your business navigate complex markets and maximize growth potential.</p>
+        <section id="products">
+            <div class="category-tabs">
+                <button class="tab-btn active" onclick="showCategory('flags')">Indian Flags</button>
+                <button class="tab-btn" onclick="showCategory('coffee')">Indian Coffee</button>
+            </div>
+            
+            <div id="flags" class="product-section active">
+                <h2>Indian Flag Collection</h2>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://via.placeholder.com/250x200/000080/FFFFFF?text=National+Flag" alt="Indian National Flag">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Indian National Flag (3x2 ft)</h3>
+                            <p>Premium cotton flag with vibrant colors</p>
+                            <p class="product-price">₹499</p>
+                            <button class="btn">Add to Cart</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://via.placeholder.com/250x200/000080/FFFFFF?text=Car+Flag" alt="Car Flag">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Car Flag Set (2 flags)</h3>
+                            <p>Perfect for your vehicle on national holidays</p>
+                            <p class="product-price">₹299</p>
+                            <button class="btn">Add to Cart</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://via.placeholder.com/250x200/000080/FFFFFF?text=Khadi+Flag" alt="Khadi Flag">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Khadi Flag (5x3 ft)</h3>
+                            <p>Authentic hand-spun khadi material</p>
+                            <p class="product-price">₹1,299</p>
+                            <button class="btn">Add to Cart</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://via.placeholder.com/250x200/000080/FFFFFF?text=Desk+Flag" alt="Desk Flag">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Desk Flag with Stand</h3>
+                            <p>Elegant display for your office</p>
+                            <p class="product-price">₹199</p>
+                            <button class="btn">Add to Cart</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="service-card">
-                    <h3>Technology Solutions</h3>
-                    <p>Innovative tech services designed to transform your operations and digital capabilities.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Global Expansion</h3>
-                    <p>Comprehensive support for Indian businesses looking to expand internationally.</p>
+            </div>
+            
+            <div id="coffee" class="product-section">
+                <h2>Indian Coffee Selection</h2>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://via.placeholder.com/250x200/FF9933/000000?text=Arabica" alt="Arabica Coffee">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Karnataka Arabica</h3>
+                            <p>100g premium Arabica beans</p>
+                            <p class="product-price">₹350</p>
+                            <button class="btn">Add to Cart</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://via.placeholder.com/250x200/FF9933/000000?text=Robusta" alt="Robusta Coffee">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Kerala Robusta</h3>
+                            <p>Strong and aromatic Robusta blend</p>
+                            <p class="product-price">₹280</p>
+                            <button class="btn">Add to Cart</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://via.placeholder.com/250x200/FF9933/000000?text=Chikmagalur" alt="Chikmagalur Coffee">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Chikmagalur Special</h3>
+                            <p>250g of India's finest coffee</p>
+                            <p class="product-price">₹550</p>
+                            <button class="btn">Add to Cart</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://via.placeholder.com/250x200/FF9933/000000?text=Instant" alt="Instant Coffee">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Instant Coffee Mix</h3>
+                            <p>200g premium instant coffee</p>
+                            <p class="product-price">₹320</p>
+                            <button class="btn">Add to Cart</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
         
-        <section>
+        <section id="about" class="about-section">
             <h2>About India Corp</h2>
-            <p>India Corp is a premier business solutions provider with a strong presence across India's major economic hubs. Since our inception in 2005, we have been committed to delivering excellence through our tailored services.</p>
-            <p>Our approach combines deep market understanding with innovative thinking to create sustainable value for our clients.</p>
-            <a href="#" class="btn" style="background-color: #ff0000;">Learn More About Us</a>
+            <p>Founded in 2010, India Corp is dedicated to promoting two of India's finest products - our world-class coffee and our national pride.</p>
+            <p>We source our coffee directly from plantations in Karnataka and Kerala, ensuring fair prices for farmers and premium quality for our customers. Our flags are manufactured with the highest quality materials, made entirely in India.</p>
+            <p>By choosing India Corp, you support Indian farmers, artisans, and the Make in India initiative.</p>
+        </section>
+        
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Email: contact@indiacorp.com</p>
+            <p>Phone: +91 9876543210</p>
+            <p>Address: India Corp House, Bengaluru - 560001</p>
         </section>
     </div>
     
     <footer>
         <p>&copy; 2023 India Corp. All Rights Reserved.</p>
-        <p>Contact: <a href="mailto:info@indiacorp.com" style="color: #ff0000;">info@indiacorp.com</a> | Phone: +91 11 23456789</p>
-        <p>Corporate Office: New Delhi, India</p>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Shipping Policy</a>
+            <a href="#">Returns</a>
+        </div>
+        <p>Proudly Indian</p>
     </footer>
+
+    <script>
+        // Category tab functionality
+        function showCategory(category) {
+            // Hide all product sections
+            document.querySelectorAll('.product-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show selected section
+            document.getElementById(category).classList.add('active');
+            
+            // Update active tab button
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+        }
+        
+        // Simple add to cart functionality
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const product = this.parentElement.querySelector('.product-title').textContent;
+                alert(`${product} has been added to your cart!`);
+            });
+        });
+    </script>
 </body>
 </html>
