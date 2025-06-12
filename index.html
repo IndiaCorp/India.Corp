@@ -24,14 +24,16 @@
             <p style="font-size:18px;max-width:700px;margin:0 auto">Founded on June 12, 2025, Indian Corp is preparing to bring you quality Indian flags and premium coffee blends starting July 15, 2025.</p>
         </section>
 
-        <div style="display:flex;flex-wrap:wrap;justify-content:space-between;margin:40px 0">
-            <section id="origin" style="background-color:#ffffff;border-radius:15px;width:100%;margin-bottom:30px;padding:30px;box-shadow:0 4px 8px rgba(0,0,0,0.1)">
+        <div style="margin:40px 0">
+            <div id="origin" style="height:30px"></div> <!-- Anchor point for Our Origin -->
+            <section style="background-color:#ffffff;border-radius:15px;margin-bottom:30px;padding:30px;box-shadow:0 4px 8px rgba(0,0,0,0.1)">
                 <div style="font-size:40px;color:#000080;margin:20px 0;text-align:center">☸</div>
                 <h2 style="color:#e67300;margin-top:0;text-align:center">Our Origin</h2>
                 <p style="text-align:center">Indian Corp was established on June 12, 2025, with a vision to combine national pride with quality products. We're dedicated to bringing authentic Indian flags and premium coffee to enthusiasts worldwide.</p>
             </section>
 
-            <section id="launch" style="background-color:#ffffff;border-radius:15px;width:100%;padding:30px;box-shadow:0 4px 8px rgba(0,0,0,0.1)">
+            <div id="launch" style="height:30px"></div> <!-- Anchor point for Launch -->
+            <section style="background-color:#ffffff;border-radius:15px;padding:30px;box-shadow:0 4px 8px rgba(0,0,0,0.1)">
                 <div style="font-size:40px;color:#6F4E37;margin:20px 0;text-align:center">☕</div>
                 <h2 style="color:#e67300;margin-top:0;text-align:center">Launch Countdown</h2>
                 <p style="text-align:center">Our products will be available starting:</p>
@@ -51,9 +53,14 @@
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
+                const target = document.querySelector(this.getAttribute('href'));
+                const headerOffset = 100; // Adjust this value if needed
+                const elementPosition = target.offsetTop;
+                const offsetPosition = elementPosition - headerOffset;
+                
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
                 });
             });
         });
